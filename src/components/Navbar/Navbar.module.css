@@ -3,6 +3,11 @@
     background-color: darkolivegreen;
 }
 
-.item {
+.item{
     color: white;
+    text-decoration: none;
+}
+
+.active{
+    color: gold;
 }

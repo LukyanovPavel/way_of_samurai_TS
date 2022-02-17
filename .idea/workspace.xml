@@ -10,7 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5215212-f108-478a-980b-812b48a813ac" name="Default Changelist" comment="" />
+    <list default="true" id="c5215212-f108-478a-980b-812b48a813ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +85,7 @@
       <workItem from="1643742653288" duration="4397000" />
       <workItem from="1643784587109" duration="14000" />
       <workItem from="1644844555214" duration="1816000" />
-      <workItem from="1645057285441" duration="7701000" />
+      <workItem from="1645057285441" duration="15818000" />
     </task>
     <servers />
   </component>
@@ -148,6 +153,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="695" y="381" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645064554272" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1645069656653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645069656653" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1645057399848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
