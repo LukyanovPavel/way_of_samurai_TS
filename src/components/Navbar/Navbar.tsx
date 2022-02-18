@@ -8,8 +8,8 @@ type isActiveType = {
 
 export const Navbar = () => {
 
-    const setActive =({isActive}: isActiveType) => {
-       return  isActive ? s.active : s.item
+    const setActive = ({isActive}: isActiveType) => {
+        return isActive ? s.active : s.item
     }
 
     return (
