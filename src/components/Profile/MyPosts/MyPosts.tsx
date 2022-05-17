@@ -1,23 +1,43 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
+import {PostType} from "../../../redux/state";
 
-export const MyPosts = () => {
+type MyPostsType = {
+    posts: Array<PostType>
+    addPost: () => void
+    updateTextArea: (text: string) => void
+    newPostText: string
+}
+
+export const MyPosts: React.FC<MyPostsType> = ({posts, addPost,
+    updateTextArea, newPostText, ...restProps}) => {
+
+    let postElements = posts.map(el => <Post messages={el.message} likesCount={el.likesCount}/>)
+
+    const onClickAddPostHandler = () => {
+        addPost()
+    }
+    const onChangeTextAreaHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        updateTextArea(e.currentTarget.value)
+    }
+
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea
+                        value={newPostText}
+                        onChange={onChangeTextAreaHandler}
+                    />
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={onClickAddPostHandler}>Add post</button>
                 </div>
             </div>
             <div className={s.posts}>
-                <Post messages={'Hi, how are you?'} likesCount={15}/>
-                <Post messages={'It`s my firs post'} likesCount={20}/>
-                <Post messages={'It`s my second post'} likesCount={25}/>
+                {postElements}
             </div>
         </div>
     )

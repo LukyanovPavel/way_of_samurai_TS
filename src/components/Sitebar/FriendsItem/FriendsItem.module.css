@@ -1,0 +1,13 @@
+.item {
+    text-align: center;
+    color: white;
+    margin: 5px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid indianred;
+    border-radius: 50%;
+    background-color: indianred;
+}

@@ -1,47 +1,47 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
+import {DialogsPageType} from "../../redux/state";
+import {MessageItem} from "./MessageItem/MessageItem";
+import {DialogItem} from "./DialogsItem/DialogsItem";
 
-type DialogsItemType = {
-    id: string
-    name: string
+
+type DialogsPropsType = {
+    sendMessage: () => void
+    updateText: (text: string) => void
+    newMessageText: string
+    state: DialogsPageType
 }
 
-type MessageItemType = {
-    message: string
-}
+export const Dialogs: React.FC<DialogsPropsType> = ({sendMessage, updateText,
+    newMessageText, state, ...restProps}) => {
 
-const DialogItem = (props: DialogsItemType) => {
-    let path = '/dialogs/' + props.id;
+    let messageElements = state.message.map(el => <MessageItem key={el.id} id={el.id} message={el.message}/>);
+    let dialogsElements = state.dialogs.map(el => <DialogItem key={el.id} id={el.id} name={el.name}/>);
 
-    return <div className={s.dialog}>
-        <NavLink to={path}>{props.name}</NavLink>
-    </div>
-}
-
-const MessageItem = (props: MessageItemType) => {
-    return <div className={s.message}>{props.message}</div>
-}
-
-export const Dialogs = () => {
+    const addMessageHandler = () => {
+        sendMessage()
+    }
+    const changeTextHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        updateText(e.currentTarget.value)
+    }
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem id='1' name='Pavel Vyazovich'/>
-                <DialogItem id='2' name='Andrew Belkevich'/>
-                <DialogItem id='3' name='Artem Ermolovich'/>
-                <DialogItem id='4' name='Aleksandr Metselitsa'/>
-                <DialogItem id='5' name='Vladislav Uzik'/>
-                <DialogItem id='6' name='Anastasiya Zavadskaya'/>
-                <DialogItem id='7' name='Denis Kryzhevizh'/>
-                <DialogItem id='8' name='Nikolay Bolotsko'/>
-                <DialogItem id='9' name='Roman Pavlushchik'/>
+                {messageElements}
             </div>
             <div className={s.messages}>
-                <MessageItem message='Hi'/>
-                <MessageItem message='How is your it-kamasutra?'/>
-                <MessageItem message='Yo!'/>
+                {dialogsElements}
+            </div>
+            <div>
+                <textarea
+                    value={newMessageText}
+                    onChange={changeTextHandler}
+                />
+                <button
+                    onClick={addMessageHandler}
+                >Add Message
+                </button>
             </div>
         </div>
     );

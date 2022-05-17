@@ -1,0 +1,9 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.friends {
+    margin-top: 20px;
+    font-size: 1.5em;
+}

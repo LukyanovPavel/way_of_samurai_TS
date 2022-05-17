@@ -1,8 +1,9 @@
 import React from "react";
 import s from "./Navbar.module.css";
 import {NavLink} from "react-router-dom";
+import {Sitebar} from "../Sitebar/Sitebar";
 
-type isActiveType = {
+export type isActiveType = {
     isActive: boolean
 }
 
@@ -21,13 +22,18 @@ export const Navbar = () => {
                 <NavLink to={'/dialogs'} className={setActive}>Messages</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to={'/news'} className={setActive}>News</NavLink>
+                <NavLink to={'/News'} className={setActive}>News</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to={'/music'} className={setActive}>Music</NavLink>
+                <NavLink to={'/Music'} className={setActive}>Music</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to={'/settings'} className={setActive}>Settings</NavLink>
+                <NavLink to={'/Settings'} className={setActive}>Settings</NavLink>
+            </div>
+            <div className={s.item}>
+                <NavLink to={'/Friends'} className={setActive}>
+                    <Sitebar/>
+                </NavLink>
             </div>
         </nav>
     )
